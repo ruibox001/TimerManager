@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SFTimerManager.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [SFTimerManager registerSecondsChangeObserver:self timeChangeBlock:^{
+        NSLog(@"ViewController时间到");
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SFTimerManager removeSecondsObserver:self];
+    });
 }
 
 

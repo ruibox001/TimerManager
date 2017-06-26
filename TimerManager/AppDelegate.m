@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SFTimerManager.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [SFTimerManager registerSecondsChangeObserver:self timeChangeBlock:^{
+        NSLog(@"AppDelegate时间到");
+    }];
+    
     return YES;
 }
 

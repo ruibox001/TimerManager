@@ -15,6 +15,7 @@
 		9AC7DA941F00DB9A00F5F6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC7DA921F00DB9A00F5F6D9 /* LaunchScreen.storyboard */; };
 		9AC7DA9F1F00DB9A00F5F6D9 /* TimerManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC7DA9E1F00DB9A00F5F6D9 /* TimerManagerTests.m */; };
 		9AC7DAAA1F00DB9A00F5F6D9 /* TimerManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC7DAA91F00DB9A00F5F6D9 /* TimerManagerUITests.m */; };
+		9AC7DAB91F00DBFC00F5F6D9 /* SFTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC7DAB81F00DBFC00F5F6D9 /* SFTimerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		9AC7DAA51F00DB9A00F5F6D9 /* TimerManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC7DAA91F00DB9A00F5F6D9 /* TimerManagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerManagerUITests.m; sourceTree = "<group>"; };
 		9AC7DAAB1F00DB9A00F5F6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AC7DAB71F00DBFC00F5F6D9 /* SFTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTimerManager.h; sourceTree = "<group>"; };
+		9AC7DAB81F00DBFC00F5F6D9 /* SFTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		9AC7DA831F00DB9A00F5F6D9 /* TimerManager */ = {
 			isa = PBXGroup;
 			children = (
+				9AC7DAB71F00DBFC00F5F6D9 /* SFTimerManager.h */,
+				9AC7DAB81F00DBFC00F5F6D9 /* SFTimerManager.m */,
 				9AC7DA871F00DB9A00F5F6D9 /* AppDelegate.h */,
 				9AC7DA881F00DB9A00F5F6D9 /* AppDelegate.m */,
 				9AC7DA8A1F00DB9A00F5F6D9 /* ViewController.h */,
@@ -276,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC7DAB91F00DBFC00F5F6D9 /* SFTimerManager.m in Sources */,
 				9AC7DA8C1F00DB9A00F5F6D9 /* ViewController.m in Sources */,
 				9AC7DA891F00DB9A00F5F6D9 /* AppDelegate.m in Sources */,
 				9AC7DA861F00DB9A00F5F6D9 /* main.m in Sources */,
