@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [SFTimerManager registerSecondsChangeObserver:self timeChangeBlock:^{
-        NSLog(@"ViewController时间到");
+    [SFTimerManager registerOneSecondObserver:self timeUpBlock:^{
+
     }];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

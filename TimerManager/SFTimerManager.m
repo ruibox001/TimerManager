@@ -7,6 +7,7 @@
 //
 
 #import "SFTimerManager.h"
+#import "SFTimerModel.h"
 
 @interface SFTimerManager ()
 
@@ -46,17 +47,25 @@
     return item;
 }
 
-+ (void)registerSecondsChangeObserver:(id)observer timeChangeBlock:(void (^)())block {
++ (void)registerOneSecondObserver:(id)observer timeUpBlock:(void (^)())block {
+    [self registerSeconds:1 observer:observer timeUpBlock:block];
+}
+
++ (void)registerSeconds:(int)sec observer:(id)observer timeUpBlock:(void (^)())block{
+    if (sec < 1) {
+        return;
+    }
     
     if (block && observer) {
+        
         NSString *key = [[SFTimerManager sharedInstance] observerClassName:observer];
         if ([[SFTimerManager sharedInstance] observerIsExistWithObserver:key]) {
             NSString *log = [NSString stringWithFormat:@"ERROR >> 该[%@]类只能监听一个block回调，不能重复监听",key];
             NSAssert(NO,log);
             return;
         }
-        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:block,key, nil];
-        [[SFTimerManager sharedInstance].blocks addObject:dict];
+        SFTimerModel *model = [[SFTimerModel alloc] initWithSec:sec key:key block:block];
+        [[SFTimerManager sharedInstance].blocks addObject:model];
     }
 }
 
@@ -64,42 +73,35 @@
 {
     if (observer) {
         NSString *k = [[SFTimerManager sharedInstance] observerClassName:observer];
-        for (NSDictionary *dict in [SFTimerManager sharedInstance].blocks) {
-            [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                if ([key isEqualToString:k]) {
-                    [[SFTimerManager sharedInstance].blocks removeObject:dict];
-                    *stop = YES;
-                }
-            }];
-            
+        for (SFTimerModel *model in [SFTimerManager sharedInstance].blocks) {
+            if ([model.timeKey isEqualToString:k]) {
+                [[SFTimerManager sharedInstance].blocks removeObject:model];
+                break;
+            }
         }
     }
 }
 
 - (void)timeSecondChange {
-    for (NSDictionary *dict in self.blocks) {
-        [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            void (^block)()  = obj;
-            if (block) {
-                block();
-            }
-        }];
+    for (SFTimerModel *model in self.blocks) {
+        if (model.timeSec == 1) {
+            NSLog(@"%@时间到",model.timeKey);
+            model.timeBlock(); continue;
+        }
+        
+        model.timeCount ++;
+        if (model.timeCount >= model.timeSec) {
+            NSLog(@"%@时间到",model.timeKey);
+            model.timeBlock();
+            model.timeCount = 0;
+        }
     }
 }
 
 - (BOOL)observerIsExistWithObserver:(NSString *)k
 {
-    if (!k) {
-        return NO;
-    }
-    
-    for (NSDictionary *dict in self.blocks) {
-        if (!dict) {
-            return NO;
-        }
-        
-        id obj = [dict objectForKey:k];
-        if (obj) {
+    for (SFTimerModel *model in self.blocks) {
+        if ([model.timeKey isEqualToString:k]) {
             return YES;
         }
     }

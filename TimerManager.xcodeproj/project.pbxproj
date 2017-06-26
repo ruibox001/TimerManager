@@ -16,6 +16,7 @@
 		9AC7DA9F1F00DB9A00F5F6D9 /* TimerManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC7DA9E1F00DB9A00F5F6D9 /* TimerManagerTests.m */; };
 		9AC7DAAA1F00DB9A00F5F6D9 /* TimerManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC7DAA91F00DB9A00F5F6D9 /* TimerManagerUITests.m */; };
 		9AC7DAB91F00DBFC00F5F6D9 /* SFTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC7DAB81F00DBFC00F5F6D9 /* SFTimerManager.m */; };
+		9AC7DABC1F00E07000F5F6D9 /* SFTimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC7DABB1F00E07000F5F6D9 /* SFTimerModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		9AC7DAAB1F00DB9A00F5F6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AC7DAB71F00DBFC00F5F6D9 /* SFTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTimerManager.h; sourceTree = "<group>"; };
 		9AC7DAB81F00DBFC00F5F6D9 /* SFTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimerManager.m; sourceTree = "<group>"; };
+		9AC7DABA1F00E07000F5F6D9 /* SFTimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTimerModel.h; sourceTree = "<group>"; };
+		9AC7DABB1F00E07000F5F6D9 /* SFTimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTimerModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 			children = (
 				9AC7DAB71F00DBFC00F5F6D9 /* SFTimerManager.h */,
 				9AC7DAB81F00DBFC00F5F6D9 /* SFTimerManager.m */,
+				9AC7DABA1F00E07000F5F6D9 /* SFTimerModel.h */,
+				9AC7DABB1F00E07000F5F6D9 /* SFTimerModel.m */,
 				9AC7DA871F00DB9A00F5F6D9 /* AppDelegate.h */,
 				9AC7DA881F00DB9A00F5F6D9 /* AppDelegate.m */,
 				9AC7DA8A1F00DB9A00F5F6D9 /* ViewController.h */,
@@ -283,6 +288,7 @@
 			files = (
 				9AC7DAB91F00DBFC00F5F6D9 /* SFTimerManager.m in Sources */,
 				9AC7DA8C1F00DB9A00F5F6D9 /* ViewController.m in Sources */,
+				9AC7DABC1F00E07000F5F6D9 /* SFTimerModel.m in Sources */,
 				9AC7DA891F00DB9A00F5F6D9 /* AppDelegate.m in Sources */,
 				9AC7DA861F00DB9A00F5F6D9 /* main.m in Sources */,
 			);
@@ -524,6 +530,7 @@
 				9AC7DAB01F00DB9A00F5F6D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AC7DAB11F00DB9A00F5F6D9 /* Build configuration list for PBXNativeTarget "TimerManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +539,7 @@
 				9AC7DAB31F00DB9A00F5F6D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AC7DAB41F00DB9A00F5F6D9 /* Build configuration list for PBXNativeTarget "TimerManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +548,7 @@
 				9AC7DAB61F00DB9A00F5F6D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

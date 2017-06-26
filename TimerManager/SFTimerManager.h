@@ -11,8 +11,10 @@
 
 @interface SFTimerManager : NSObject
 
-//添加时间监听（成对存在）
-+ (void)registerSecondsChangeObserver:(id)observer timeChangeBlock:(void (^)())block;
+//添加时间监听(一秒钟的时间中断，最小时间间隔为1sec)
++ (void)registerOneSecondObserver:(id)observer timeUpBlock:(void (^)())block;
+
++ (void)registerSeconds:(int)sec observer:(id)observer timeUpBlock:(void (^)())block;
 
 //移除时间监听（成对存在）
 + (void)removeSecondsObserver:(id)observer;

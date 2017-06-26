@@ -18,8 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [SFTimerManager registerSecondsChangeObserver:self timeChangeBlock:^{
-        NSLog(@"AppDelegate时间到");
+    [SFTimerManager registerSeconds:10 observer:self timeUpBlock:^{
+        
     }];
     
     return YES;
